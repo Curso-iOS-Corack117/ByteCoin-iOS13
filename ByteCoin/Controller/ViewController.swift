@@ -25,6 +25,8 @@ class ViewController: UIViewController {
 
 }
 
+//MARK: - UIPickerViewDataSource, UIPickerViewDelegate
+
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -43,6 +45,8 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         coinManager.getCoinPrice(for: selectedCurrency)
     }
 }
+
+//MARK: - CoinManagerDelegate
 
 extension ViewController: CoinManagerDelegate {
     func didUpdateCoin(currency: String, rate: Double?) {
